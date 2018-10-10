@@ -40,8 +40,18 @@ Not Applicable
 Answer the below questions:
 a. Perform ANOVA test on the discriminant analysis scores of nuclear localization signals of both nuclear
    and non-nuclear proteins by class variables (Target).
+   Answer:
+          a<-aov(yeast$mit~yeast$nuc)
+          summary(a)
+          
 b. Which class is significantly different from others?
+Answer:
+plot(yeast$mcg~yeast$class)
+aa<-aov(yeast$gvh~yeast$class)
+summary(aa)
+TukeyHSD(aa)
 
+#the class is significantly different which p>0.05
 
    Expected Output
 Not Applicable
